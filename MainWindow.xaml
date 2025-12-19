@@ -1,0 +1,158 @@
+﻿<Window x:Class="MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Media.Net" Icon="medianet.ico" Height="480" Width="640" MinHeight="224" MinWidth="410">
+    <Grid Name="MainGrid">
+        <Menu Height="23" Name="MainMenu" VerticalAlignment="Top">
+            <MenuItem Header="_File">
+                <MenuItem Name="OpenMenuItem" Header="_Open" ToolTip="Open Media">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/File/open16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Visibility="Collapsed" Header="_Recent" ToolTip="Recent Media" IsEnabled="False" />
+                <Separator Visibility="Collapsed" />
+                <MenuItem Visibility="Collapsed" Header="_Save As" ToolTip="Save Media As">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/File/saveas16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="ExitMenuItem" Header="E_xit" ToolTip="Close Media.Net (Alt + F4)">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/File/exit16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Visibility="Collapsed" Header="_Edit">
+                <MenuItem Name="CutMenuItem" Header="C_ut" ToolTip="Cut Selected" />
+                <MenuItem Name="CopyMenuItem" Header="_Copy" ToolTip="Copy Selected" />
+                <MenuItem Name="PasteMenuItem" Header="_Paste" ToolTip="Paste Selected" />
+                <Separator />
+                <MenuItem Name="SelectAllMenuItem" Header="Select _All" ToolTip="Select All" />
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Visibility="Collapsed" Name="MenubarMenuItem" Header="Menubar" />
+                <MenuItem Visibility="Collapsed" Name="ToolbarMenuItem" Header="Toolbar" />
+                <MenuItem Visibility="Collapsed" Name="SidebarMenuItem" Header="Sidebar" />
+                <Separator Visibility="Collapsed" />
+                <MenuItem Name="FullscreenMenuItem" Header="_Fullscreen" ToolTip="Enter/Exit Fullscreen">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/View/fullscreen16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Playback">
+                <MenuItem Name="PlayMenuItem" Header="_Play/Pause" IsEnabled="False" ToolTip="Play/Pause Media">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Playback/play16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="StopManuItem" Header="_Stop" ToolTip="Stop Playback" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Playback/stop16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator Visibility="Collapsed" />
+                <MenuItem Visibility="Collapsed" Name="SkipBackwardMenuItem" Header="Skip Backward" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Playback/Backward16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Visibility="Collapsed" Name="SkipForwardMenuItem" Header="Forward" IsEnabled="False">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Playback/Forward16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Visibility="Collapsed" Header="_Tools" >
+                <MenuItem Name="OptionsMenuItem" Header="_Options" />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Name="OnlineHelpMenuItem" Header="_Online Help">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Help/onlinehelp16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="WebsiteMenuItem" Header="Website">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Help/website16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="DonateMenuItem" Header="_Donate">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Help/donate16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="AboutMenuItem" Header="_About">
+                    <MenuItem.Icon>
+                        <Image Height="16" Width="16" Source="Images/Help/about16.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <ToolBar Height="40" Margin="-9,21,-16,0" Name="MainToolBar" VerticalAlignment="Top">
+            <ToolBar.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#7FFFFBFF" Offset="0.5"/>
+                    <GradientStop Color="#00F7F7F7" Offset="1"/>
+                </LinearGradientBrush>
+            </ToolBar.Background>
+            <Button Name="OpenButton" ToolTip="Open Media">
+                <Image Source="Images/File/open32.png" Height="32" Width="32" />
+            </Button>
+            <Separator />
+            <Button Name="PlayButton" IsEnabled="False" ToolTip="Play/Pause">
+                <Image Name="PlayButtonImage" Height="32" Width="32" Source="Images/Playback/play32.png" />
+            </Button>
+            <Button Name="StopButton" IsEnabled="False" ToolTip="Stop">
+                <Image Height="32" Width="32" Source="Images/Playback/stop32.png" />
+            </Button>
+            <Button Visibility="Collapsed" Name="SkipBackwardButton" IsEnabled="false" >
+                <Image Height="32" Width="32" Source="Images/Playback/backward32.png" />
+            </Button>
+            <Button Visibility="Collapsed" Name="SkipForwardButton" IsEnabled="False" >
+                <Image Height="32" Width="32" Source="Images/Playback/forward32.png" />
+            </Button>
+            <Separator Visibility="Collapsed" />
+            <ProgressBar Visibility="Collapsed" Name="Seekbar" Width="192" />
+        </ToolBar>
+        <ListBox HorizontalAlignment="Left" Margin="-1,60,0,0" Name="SidebarListBox" Width="149" BorderBrush="#00828790">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Offset="1"/>
+                    <GradientStop Color="White" Offset="0.5"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+            <ListBoxItem Height="32" >
+                <DockPanel>
+                    <Image RenderOptions.BitmapScalingMode="Fant" Height="32" Width="32" Source="Images/View/music32.png" />
+                    <TextBlock Margin="2,0,0,0" Text="Music" VerticalAlignment="Center" />
+                </DockPanel>
+            </ListBoxItem>
+            <ListBoxItem Height="32" >
+                <DockPanel>
+                    <Image RenderOptions.BitmapScalingMode="Fant" Height="32" Width="32" Source="Images/View/movies32.png" />
+                    <TextBlock Margin="2,0,0,0" Text="Movies" VerticalAlignment="Center" />
+                </DockPanel>
+            </ListBoxItem>
+            <ListBoxItem Visibility="Collapsed" Height="32">
+                <DockPanel>
+                    <Image Height="32" Width="32" />
+                    <TextBlock Text="Podcasts" VerticalAlignment="Center" />
+                </DockPanel>
+            </ListBoxItem>
+            <ListBoxItem Visibility="Collapsed" Height="32">
+                <DockPanel>
+                    <Image Height="32" Width="32" />
+                    <TextBlock Text="Internet Radio" VerticalAlignment="Center" />
+                </DockPanel>
+            </ListBoxItem>
+        </ListBox>
+        <ListBox Margin="148,60,0,0" Name="ContentListBox" BorderBrush="#00828790" />
+        <DockPanel Visibility="Collapsed" Name="MovieView" Margin="0,60,0,0" Background="Black">
+            <MediaElement Name="MoviePlayer" LoadedBehavior="Manual" />
+        </DockPanel>
+    </Grid>
+</Window>

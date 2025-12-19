@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="MainWindow_Loc" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">24, 24</Value>
+    </Setting>
+    <Setting Name="MainWindow_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">320, 480</Value>
+    </Setting>
+    <Setting Name="Options_MoviesFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Options_MusicFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Options_ImagesFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
